@@ -1,5 +1,6 @@
 package com.example.visitorapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class AddActivity extends AppCompatActivity {
     EditText t1,t2,t3,t4;
-    Button b1;
+    Button b1,b2;
     String s1,s2,s3,s4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class AddActivity extends AppCompatActivity {
         t3=(EditText) findViewById(R.id.e3);
         t4=(EditText) findViewById(R.id.e4);
         b1=(Button) findViewById(R.id.bb);
+        b2=(Button) findViewById(R.id.bbb);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,6 +37,13 @@ public class AddActivity extends AppCompatActivity {
                 s4=t4.getText().toString();
                 Toast.makeText(getApplicationContext(),s1+s2+s3+s4,Toast.LENGTH_LONG).show();
 
+            }
+        });
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent o=new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(o);
             }
         });
 
